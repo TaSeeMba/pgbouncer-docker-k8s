@@ -11,10 +11,10 @@ To run the image in docker:
 2. Run the image:
 
     The following environment variables need to be first set: 
-        * `DB_USER`
-        * `DB_PASSWORD`
-        * `DB_HOST`
-        * `DB_NAME`
+    * `DB_USER`
+    * `DB_PASSWORD`
+    * `DB_HOST`
+    * `DB_NAME`
 
     Then, run the image using this command:
     ```
@@ -25,4 +25,9 @@ To run the image in docker:
         -e DB_NAME=database \
         -p 6432:6432 \
         pgbouncer:latest 
+    ```
+
+3. To view logs of the running image, run: 
+    ```
+    docker logs -f pgbouncer
     ```
