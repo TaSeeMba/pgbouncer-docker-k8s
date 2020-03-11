@@ -1,4 +1,8 @@
 FROM alpine:3.7
+LABEL maintainer="https://github.com/TaSeeMba" \
+      version="1.0" \
+      appversion="1.11.1" \
+      description="PGDG PgBouncer running on Debian 10"
 ARG VERSION=1.11.1
 
 # Inspiration from https://github.com/gmr/alpine-pgbouncer/blob/master/Dockerfile
