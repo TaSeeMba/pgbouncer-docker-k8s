@@ -27,12 +27,12 @@ RUN \
   cd /tmp && \
   rm -rf /tmp/pgbouncer*  && \
   apk del --purge autoconf autoconf-doc automake udns-dev curl gcc libc-dev libevent-dev libtool make man libressl-dev pkgconfig
+
 ADD entrypoint.sh /entrypoint.sh
+
 USER postgres
+
 EXPOSE 6432
-ENV DB_USER=postgres
-ENV DB_PASSWORD=postgres
-ENV DB_HOST=postgresql.default.svc.cluster.local
-ENV DB_NAME=postgres
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/pgbouncer", "/etc/pgbouncer/pgbouncer.ini"]
