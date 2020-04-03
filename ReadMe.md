@@ -27,7 +27,7 @@ Such a setup can be illustrated using the following diagram:
 
 ![images/without-pooling](images/without-pooling.png "Here our microservices connect directly to PostgreSQL, thus requiring one or many connection per service.")
 
-By pooling connections we can have multiple client-side connections reuse PostgreSQL connections. For example, without pooling we'd need at lease M*N PostgreSQL connections to handle N microservices with M being the highest number of connections in one of the services. With connection pooling, we may only need 5 or so PostgreSQL connections depending on our configuration. This means our connection diagram will instead look something like the following:
+By pooling connections we can have multiple client-side connections reuse PostgreSQL connections. For example, without pooling we'd need at lease `M*N` PostgreSQL connections to handle `N` microservices with `M` being the highest number of connections in one of the services. With connection pooling, we may only need 5 or so PostgreSQL connections depending on our configuration. This means our connection diagram will instead look something like the following:
 
 ![images/without-pooling](images/with-pooling.png "Here our microservices connect directly to PostgreSQL via PgBouncer.")
 
