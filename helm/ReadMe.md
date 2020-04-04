@@ -5,12 +5,8 @@ This helm chart installs PgBouncer in a Kubernetes cluster. The chart orchestrat
 ## Docker Image Build
 
 First build either the alpine or debian pgBouncer docker image you want to use.
-
-## Installation
-
-Run:
 ```
-helm install -n pgbouncer .
+docker build -t pgbouncer .
 ```
 
 ## Configuration
@@ -24,3 +20,20 @@ The values of the following environment variables need to be first set in the `v
 * `DB_NAME` - name of PostgreSQL database.
 * `connection_limits_enabled` - variable to set whether pgBouncer will have a capped number of connections to PostgreSQL.
 * `MAX_DB_CONNECTIONS` - maximum number of allowed database connections from pgBouncer to PostgreSQL.
+
+## Installation
+
+1. Install the helm chart by running:
+    ```
+    helm install -n pgbouncer .
+    ```
+
+2. To get the name of the running pgBouncer pod, run: 
+    ```
+    helm status pgbouncer
+    ```
+
+3. To view logs of the running container in Kubernetes, run:
+    ```
+    kubectl logs -f pod/<NAME_OF_RUNNING_POD>
+    ```

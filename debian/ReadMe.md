@@ -27,7 +27,11 @@ To run the image in docker:
         pgbouncer:latest 
     ```
 
-3. To view logs of the running image, run: 
+    The other optional parameters you can set are `MAX_DB_CONNECTIONS`, `MAX_USER_CONNECTIONS` and `POOL_MODE` values. 
+
+    To run this image in Kubernetes using helm, refer to instructions in the helm folder.
+
+3. To view logs of the running container, run: 
     ```
     docker logs -f pgbouncer
     ```
